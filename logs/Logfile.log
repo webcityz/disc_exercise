@@ -1,0 +1,39 @@
+2019-06-24 19:39:09 INFO  Log:50 - browser set to: firefox
+2019-06-24 19:39:09 INFO  Log:50 - The browser used in this test: firefox
+2019-06-24 19:39:09 INFO  Log:50 - The current operating system: WINDOWS 10
+2019-06-24 19:39:09 INFO  Log:50 - The current architecture: amd64
+2019-06-24 19:39:09 ERROR Log:59 - Error getting firefox driver: The driver executable does not exist: C:\Users\reggy\eclipse-workspace\DiscoveryAutoTest\reports\geckodriver.exe
+2019-06-24 19:40:03 INFO  Log:50 - browser set to: firefox
+2019-06-24 19:40:03 INFO  Log:50 - The browser used in this test: firefox
+2019-06-24 19:40:03 INFO  Log:50 - The current operating system: WINDOWS 10
+2019-06-24 19:40:03 INFO  Log:50 - The current architecture: amd64
+2019-06-24 19:41:45 INFO  Log:50 - browser set to: firefox
+2019-06-24 19:41:45 INFO  Log:50 - The browser used in this test: firefox
+2019-06-24 19:41:45 INFO  Log:50 - The current operating system: WINDOWS 10
+2019-06-24 19:41:45 INFO  Log:50 - The current architecture: amd64
+2019-06-24 19:43:47 ERROR Log:59 - Error getting firefox driver: newSession
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'DESKTOP-OQ7GOIK', ip: '192.168.8.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.1'
+Driver info: driver.version: FirefoxDriver
+remote stacktrace: WebDriverError@chrome://marionette/content/error.js:179:5
+UnknownCommandError@chrome://marionette/content/error.js:473:5
+despatch@chrome://marionette/content/server.js:281:13
+execute@chrome://marionette/content/server.js:262:16
+onPacket/<@chrome://marionette/content/server.js:235:20
+onPacket@chrome://marionette/content/server.js:236:9
+_onJSONObjectReady/<@chrome://marionette/content/transport.js:492:20
+
+2019-06-24 19:44:35 INFO  Log:50 - browser set to: chrome
+2019-06-24 19:44:35 INFO  Log:50 - The browser used in this test: chrome
+2019-06-24 19:44:35 INFO  Log:50 - The current operating system: WINDOWS 10
+2019-06-24 19:44:35 INFO  Log:50 - The current architecture: amd64
+2019-06-24 19:50:04 INFO  Log:50 - browser set to: chrome
+2019-06-24 19:50:04 INFO  Log:50 - The browser used in this test: chrome
+2019-06-24 19:50:04 INFO  Log:50 - The current operating system: WINDOWS 10
+2019-06-24 19:50:04 INFO  Log:50 - The current architecture: amd64
+2019-06-24 19:50:11 INFO  Log:50 - environment set to: local
+2019-06-24 19:54:29 INFO  Log:50 - browser set to: chrome
+2019-06-24 19:54:29 INFO  Log:50 - The browser used in this test: chrome
+2019-06-24 19:54:29 INFO  Log:50 - The current operating system: WINDOWS 10
+2019-06-24 19:54:29 INFO  Log:50 - The current architecture: amd64
+2019-06-24 19:54:34 INFO  Log:50 - environment set to: local
