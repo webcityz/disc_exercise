@@ -12,7 +12,7 @@ public class TestProperties {
 	public static final String ReportsDirectory = WorkingDirectory+File.separator+"reports"+File.separator;
 	public static final String LogsDirectory = WorkingDirectory+File.separator+"logs"+File.separator;
 	
-	public static final int SHORT_WAIT = 50;
+	public static final int SHORT_WAIT = 100;
 	public static final int MEDIUM_WAIT = 1000;
 	public static final int LONG_WAIT = 6000;
 	/**

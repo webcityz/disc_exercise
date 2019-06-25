@@ -68,8 +68,8 @@ public class BaseLine implements ITestListener {
 				ChromeOptions options = new ChromeOptions();
 				String strChromePath = "AppData"+File.separator+"Local"+File.separator+"Google"+File.separator+"Chrome"+File.separator+"Application";
 				String strPath = "C:"+File.separator+"Users"+File.separator+System.getProperty("user.name")+File.separator+strChromePath+File.separator+"chrome.exe";
-				String sPath = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
-				options.setBinary(sPath);
+				//String sPath = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
+				options.setBinary(strPath);
 				options.addArguments("--dns-prefetch-disable");
 				options.addArguments("--always-authorize-plugins");
 				driver = new ChromeDriver(options);
