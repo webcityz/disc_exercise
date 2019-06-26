@@ -46,8 +46,8 @@ public class Page {
 	}
 	
 	public void actOnVideo(WebDriver driver,String strAction) {
-		WebElement videoPlayer = driver.findElement(By.id("vjs_video_3"));
-		
+		sleepFor(TestProperties.LONG_WAIT * 2);
+		WebElement videoPlayer = driver.findElement(By.id("vjs_video_3_html5_api"));
 		JavascriptExecutor jsExecutor = (JavascriptExecutor)driver;
 		
 		//Get the Source of Video that will be played in Video Player
@@ -57,26 +57,30 @@ public class Page {
 		
 		switch(strAction.toLowerCase()) {
 		case "play":
-		jsExecutor.executeScript("document.getElementById(\"vjs_video_3\").play()");
+		//jsExecutor.executeScript("document.getElementById(\"vjs_video_3\").play()");
 		//Play the Video
-		//jsExecutor.executeScript("return arguments[0].play()", videoPlayer);
+		sleepFor(TestProperties.MEDIUM_WAIT * 2);
+		jsExecutor.executeScript("arguments[0].play();", videoPlayer);
 		Log.info("Playing Video...");
-		sleepFor(TestProperties.MEDIUM_WAIT);
+		sleepFor(TestProperties.MEDIUM_WAIT * 2);
 			break;
 		case "pause":
 		 //pause playing video 
-		 jsExecutor.executeScript("document.getElementById(\"vjs_video_3\").pause()");
-			//jsExecutor.executeScript("return arguments[0].pause()", videoPlayer);
+		 //jsExecutor.executeScript("document.getElementById(\"vjs_video_3\").pause()");
+			sleepFor(TestProperties.LONG_WAIT * 2);
+			jsExecutor.executeScript("arguments[0].pause();", videoPlayer);
 			Log.info("Pausing Video...");
 			sleepFor(TestProperties.SHORT_WAIT);
 		 //check video is paused
-		 System.out.println(jsExecutor.executeScript("document.getElementById(\"vjs_video_3\").paused"));
+			//System.out.println(jsExecutor.executeScript("arguments[0].pause();\", videoPlayer);"));
+			jsExecutor = (JavascriptExecutor)driver;
+			System.out.println(jsExecutor.executeScript("document.getElementById(\"vjs_video_3_html5_api\").paused"));
 		   System.out.println();
 		 //jsExecutor.executeScript("document.getElementById(\"video\").play()");
 		 break;
 		case "restart":
 		 // play video from starting
-		 jsExecutor.executeScript("document.getElementById(\"video\").currentTime=0");
+		 jsExecutor.executeScript("document.getElementById(\"vjs_video_3_html5_api\").currentTime=0");
 		 Log.info("Restarting Video...");
 		 sleepFor(TestProperties.MEDIUM_WAIT);
 		 

@@ -6,6 +6,7 @@ import org.testng.Assert;
 
 import com.dc.pages.LandingPage;
 import com.dc.utilities.BaseLine;
+import com.dc.utilities.TestProperties;
 
 import cucumber.api.DataTable;
 import cucumber.api.PendingException;
@@ -36,6 +37,8 @@ public class Fixtures extends BaseLine{
 		
 		lp.navigateToUrl("https://video.eurosport.co.uk/");
 		
+		lp.sleepFor(TestProperties.LONG_WAIT);
+		
 		lp.clickOnLinkByText("News Videos");
 		
 		String sTitle = lp.getCurrentPageTitle();
@@ -58,7 +61,7 @@ public class Fixtures extends BaseLine{
 	public void the_selected_video_is_playing() throws Throwable {
 		
 	    
-	    lp.playVideo();
+	    lp.pauseVideo();
 	    System.out.println("");
 
 		}
@@ -69,8 +72,8 @@ public class Fixtures extends BaseLine{
 		
 		//lp.clickVideoPlayerIcon("maximize");
 		
-		bPlay = lp.isPlayButtonDisplayed();
-		bPause = lp.isPlayButtonDisplayed();
+		bPlay = lp.isPlayingIconDisplayed();
+		bPause = lp.isPausedIconDisplayed();
 		bMaximise = lp.isMaximiseIconDisplayed();
 		System.out.println("");
 			

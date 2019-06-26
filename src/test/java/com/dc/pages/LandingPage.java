@@ -162,7 +162,7 @@ public class LandingPage extends Page{
 		String strTemp=driver.findElement(By.tagName("body")).getText().toLowerCase();
 		
 		while(!strTemp.contains(strText.toLowerCase())) {
-			sleepFor(TestProperties.SHORT_WAIT);
+			sleepFor(TestProperties.MEDIUM_WAIT);
 			strTemp=driver.findElement(By.tagName("body")).getText().toLowerCase();
 			Log.info("waiting for link containing: "+strText );
 		}
@@ -209,7 +209,15 @@ public class LandingPage extends Page{
 	}
 	
 	public String getCurrentPageTitle() {
-		return getPageTitle(driver);
+		String sTitle = "";
+		try {
+			sTitle = getPageTitle(driver);
+			Log.info("The current page title is: "+sTitle);
+		}
+		catch(Exception e) {
+			Log.info("Error retrieving page title...\n"+e.getMessage());
+		}
+		return sTitle;
 	}
 	
 	public void playVideo() {
