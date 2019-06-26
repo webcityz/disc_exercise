@@ -17,6 +17,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+
 public class BaseLine implements ITestListener {
 	protected static WebDriver driver;
 	protected static ExtentReports reports;
@@ -32,6 +33,7 @@ public class BaseLine implements ITestListener {
 	private static int iTestNum = 0;
 	
 	ExtentReportsUtility extRepUtil = new ExtentReportsUtility();
+	FileUtility fu = new FileUtility();
 	
 	public BaseLine() {
 		BaseLine.driver = getDriver();
@@ -67,9 +69,15 @@ public class BaseLine implements ITestListener {
 				System.setProperty("webdriver.chrome.driver", TestProperties.ResourcesDirectory+"chromedriver.exe");
 				ChromeOptions options = new ChromeOptions();
 				String strChromePath = "AppData"+File.separator+"Local"+File.separator+"Google"+File.separator+"Chrome"+File.separator+"Application";
-				//String strPath = "C:"+File.separator+"Users"+File.separator+System.getProperty("user.name")+File.separator+strChromePath+File.separator+"chrome.exe";
-				String sPath = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
-				options.setBinary(sPath);
+				
+				String strPath = "C:"+File.separator+"Users"+File.separator+System.getProperty("user.name")+File.separator+strChromePath+File.separator+"chrome.exe";
+				if(fu.doesFileExist(strPath)==true) {	
+				}
+				else {
+					strPath = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
+				}
+				Log.info("Using "+strPath+" as the chrome exe location");
+				options.setBinary(strPath);
 				options.addArguments("--dns-prefetch-disable");
 				options.addArguments("--always-authorize-plugins");
 				driver = new ChromeDriver(options);
@@ -100,6 +108,34 @@ public class BaseLine implements ITestListener {
 		}
 		driver.manage().window().maximize();
 		return driver;
+	}
+	
+	
+	/**
+	 * Gets the name of the current method
+	 * @param depth
+	 * @return Name of the current method
+	 * @author reggy
+	 */
+	public static String getMethodName(int depth)
+	{
+		String sName="";
+		final StackTraceElement[] ste = Thread.currentThread().getStackTrace();
+		sName=ste[depth].getMethodName();
+		Log.info("Getting Method name: "+sName);
+		return sName; 
+	}
+	
+	/**
+	 * Gets the start execution time of the test
+	 * @return
+	 */
+	public static String executionStartTime() {
+		return TimesAndDates.getCurrentTimeAndDate().replaceAll("/", "_").replaceAll(":", "").replace(" ", "_");
+	}
+	
+	public static void setTestName(String strMethodName, String strStartTime) {
+		strTestName = strMethodName+"_"+strStartTime.replaceAll("/", "").replaceAll(":", "").replace(" ", "_");
 	}
 	
 	public void onFinish(ITestContext arg0) {

@@ -1,15 +1,9 @@
 package com.dc.pages;
 
-import static org.junit.Assert.assertEquals;
-
-import java.io.File;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -45,19 +39,19 @@ public class Page {
 		return isDisplayed;
 	}
 	
+	/**
+	 * Interacts with the video player
+	 * @param driver - WebDriver Instance
+	 * @param strAction - Play or Pause
+	 * @author reggy
+	 */
 	public void actOnVideo(WebDriver driver,String strAction) {
-		sleepFor(TestProperties.LONG_WAIT * 2);
+		sleepFor(TestProperties.LONG_WAIT * 5);
 		WebElement videoPlayer = driver.findElement(By.id("vjs_video_3_html5_api"));
 		JavascriptExecutor jsExecutor = (JavascriptExecutor)driver;
-		
-		//Get the Source of Video that will be played in Video Player
-		//String source = (String) jsExecutor.executeScript("return arguments[0].currentSrc;", videoPlayer);
-		//Get the Duration of Video
-		//long duration = (Long) jsExecutor.executeScript("return arguments[0].duration", videoPlayer);
-		
+
 		switch(strAction.toLowerCase()) {
 		case "play":
-		//jsExecutor.executeScript("document.getElementById(\"vjs_video_3\").play()");
 		//Play the Video
 		sleepFor(TestProperties.MEDIUM_WAIT * 2);
 		jsExecutor.executeScript("arguments[0].play();", videoPlayer);
@@ -66,30 +60,13 @@ public class Page {
 			break;
 		case "pause":
 		 //pause playing video 
-		 //jsExecutor.executeScript("document.getElementById(\"vjs_video_3\").pause()");
 			sleepFor(TestProperties.LONG_WAIT * 2);
 			jsExecutor.executeScript("arguments[0].pause();", videoPlayer);
 			Log.info("Pausing Video...");
 			sleepFor(TestProperties.SHORT_WAIT);
-		 //check video is paused
-			//System.out.println(jsExecutor.executeScript("arguments[0].pause();\", videoPlayer);"));
 			jsExecutor = (JavascriptExecutor)driver;
-			System.out.println(jsExecutor.executeScript("document.getElementById(\"vjs_video_3_html5_api\").paused"));
-		   System.out.println();
-		 //jsExecutor.executeScript("document.getElementById(\"video\").play()");
+			System.out.println("Is It Paused? "+jsExecutor.executeScript("document.getElementById(\"vjs_video_3_html5_api\").paused"));
 		 break;
-		case "restart":
-		 // play video from starting
-		 jsExecutor.executeScript("document.getElementById(\"vjs_video_3_html5_api\").currentTime=0");
-		 Log.info("Restarting Video...");
-		 sleepFor(TestProperties.MEDIUM_WAIT);
-		 
-		 break;
-		case "reload":
-		 //reload video
-		 jsExecutor.executeScript("document.getElementById(\"video\").load()");
-		 Log.info("Reloading Video...");
-		 sleepFor(TestProperties.SHORT_WAIT);
 		}
 		
 		sleepFor(TestProperties.MEDIUM_WAIT);
