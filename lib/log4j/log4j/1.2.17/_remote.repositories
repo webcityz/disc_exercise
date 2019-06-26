@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Jun 15 11:51:52 CEST 2019
+log4j-1.2.17-sources.jar>nexus=
+log4j-1.2.17.pom>nexus=
+log4j-1.2.17.jar>nexus=

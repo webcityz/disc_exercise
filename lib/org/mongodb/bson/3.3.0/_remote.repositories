@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Jun 15 11:52:14 CEST 2019
+bson-3.3.0-sources.jar>nexus=
+bson-3.3.0.pom>nexus=
+bson-3.3.0.jar>nexus=

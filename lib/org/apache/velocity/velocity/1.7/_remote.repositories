@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Jun 15 11:52:07 CEST 2019
+velocity-1.7.pom>nexus=
+velocity-1.7.jar>nexus=
+velocity-1.7-sources.jar>nexus=

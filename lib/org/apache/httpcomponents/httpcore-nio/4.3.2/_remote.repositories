@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Jun 15 11:51:55 CEST 2019
+httpcore-nio-4.3.2-sources.jar>nexus=
+httpcore-nio-4.3.2.pom>nexus=
+httpcore-nio-4.3.2.jar>nexus=

@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Jun 15 11:52:21 CEST 2019
+rest-assured-common-3.0.3.jar>nexus=
+rest-assured-common-3.0.3-sources.jar>nexus=
+rest-assured-common-3.0.3.pom>nexus=

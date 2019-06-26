@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Jun 15 11:52:46 CEST 2019
+tfs-sdk-all-12.0.2.pom>nexus=
+tfs-sdk-all-12.0.2.jar>nexus=
+tfs-sdk-all-12.0.2-javadoc.jar>nexus=

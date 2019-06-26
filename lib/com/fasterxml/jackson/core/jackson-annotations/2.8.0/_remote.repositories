@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Jun 15 11:52:06 CEST 2019
+jackson-annotations-2.8.0.pom>nexus=
+jackson-annotations-2.8.0.jar>nexus=
+jackson-annotations-2.8.0-sources.jar>nexus=

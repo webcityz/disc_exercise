@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Jun 15 11:52:32 CEST 2019
+commonmark-0.11.0-sources.jar>nexus=
+commonmark-0.11.0.pom>nexus=
+commonmark-0.11.0.jar>nexus=

@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Jun 15 11:51:55 CEST 2019
+httpmime-4.3.6.pom>nexus=
+httpmime-4.3.6.jar>nexus=
+httpmime-4.3.6-sources.jar>nexus=
