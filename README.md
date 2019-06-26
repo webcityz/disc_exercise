@@ -40,8 +40,11 @@ Note: Bug discovered:-
 
 Steps to replicate
 1 - Navigate to Landing page - https://video.eurosport.co.uk
+
 2 - Click on the New Video menu/link
+
 3 - Select Tennis from the All Sports dropdown list
+
 
 Results
 
