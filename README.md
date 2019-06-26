@@ -8,7 +8,9 @@ Step 2: In your choice of IDE, Import the clone as a Maven project
 
 Step 3: Run maven to generate-sources  i.e maven will download all the dependencies
 
-Step 4:To execute the test, locate RunTests.java that is found in com.features.runner, right click then select Run As TestNG
+Step 4:To execute the test, do either of the following:
+1 - locate regression.xml in the root folder, right click then select Run As TestNG Suite
+2 - locate RunTests.java that is found in com.features.runner, right click then select Run As TestNG
 
 
 The approach taken was to focus on the supporting framework rather than just the individual tests.
@@ -33,3 +35,16 @@ resources: containings the executables for different browsers and the test.prope
 logs: A rotating Logfile.log used as an audit trail. All actions carried out under test are logged here
 
 reports: An extent report is created here for every execution. Each report is appended with date and time of execution
+
+Note: Bug discovered:-
+
+Steps to replicate
+1 - Navigate to Landing page - https://video.eurosport.co.uk
+2 - Click on the New Video menu/link
+3 - Select Tennis from the All Sports dropdown list
+
+Results
+Videos of various catergories are displayed
+
+Expected Results
+Videos of the category Tennis should be displayed and videos from other categories not displayed
