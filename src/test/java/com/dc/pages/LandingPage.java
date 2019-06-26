@@ -54,7 +54,15 @@ public class LandingPage extends Page{
 		}
 	}
 	
-	
+	public void navigateToUrl(String strUrl) {
+		try {
+			driver.navigate().to(strUrl);
+			Log.info("Navigating to: "+strUrl);
+		}
+		catch(Exception ex) {
+			Log.error("could not navigate to: "+strUrl);
+		}
+	}
 	
 	/**
 	 * Sets the webdriver instance to LandingPage driver
@@ -103,7 +111,7 @@ public class LandingPage extends Page{
 		return isElementDisplayed(MAXIMISE_ICON, "Maximise Icon", TestProperties.MEDIUM_WAIT);
 	}
 	
-	public void clickVideoPlayerIcon(String strWhatIcon) {
+	private void clickVideoPlayerIcon(String strWhatIcon) {
 		
 		switch(strWhatIcon.toLowerCase()) {
 		case "play":
@@ -196,11 +204,27 @@ public class LandingPage extends Page{
 		clickButton(PLAY_BUTTON,"Play");
 	}
 	
-	public void selectVideo1Row1() {
-		clickElement(VIDEO_ROW1_COLUMN1,"Video On Row1 Column1");
+	public WebElement selectVideo1Row1() {
+		return clickElement(VIDEO_ROW1_COLUMN1,"Video On Row1 Column1");
 	}
 	
 	public String getCurrentPageTitle() {
 		return getPageTitle(driver);
+	}
+	
+	public void playVideo() {
+		actOnVideo(driver,"play");
+	}
+	
+	public void pauseVideo() {
+		actOnVideo(driver,"pause");
+	}
+	
+	public void reloadVideo() {
+		actOnVideo(driver,"reload");
+	}
+	
+	public void restartVideo() {
+		actOnVideo(driver,"restart");
 	}
 }

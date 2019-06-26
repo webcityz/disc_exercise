@@ -22,6 +22,8 @@ public class Fixtures extends BaseLine{
 	public void i_am_Eurosport_Customer() throws Throwable {
 		
 		lp.navigateToLandingPage();
+		
+		
 		 
 		if(lp.isIAcceptButtonDisplayed() == true) {
 			lp.clickIAcceptButton();
@@ -31,6 +33,8 @@ public class Fixtures extends BaseLine{
 	@Given("^On Videos Hub Page$")
 	public void on_Videos_Hub_Page() throws Throwable {
 		lp.isShopIconDisplayed();
+		
+		lp.navigateToUrl("https://video.eurosport.co.uk/");
 		
 		lp.clickOnLinkByText("News Videos");
 		
@@ -46,18 +50,16 @@ public class Fixtures extends BaseLine{
 	    
 	    lp.selectVideo1Row1();
 	    	    
-	    lp.clickPlayButton();
+	    //lp.playVideo();
 
 		}
 
 	@Then("^the selected video is playing$")
 	public void the_selected_video_is_playing() throws Throwable {
 		
-	    lp.isMaximiseIconDisplayed();
 	    
-	    lp.isMaximiseIconDisplayed();
-	    
-	    lp.clickVideoPlayerIcon("play");
+	    lp.playVideo();
+	    System.out.println("");
 
 		}
 
@@ -65,7 +67,7 @@ public class Fixtures extends BaseLine{
 	public void the_following_player_controls_are_displayed(DataTable arg1) throws Throwable {
 		boolean bPlay = false, bPause = false, bMaximise = false;
 		
-		lp.clickVideoPlayerIcon("maximize");
+		//lp.clickVideoPlayerIcon("maximize");
 		
 		bPlay = lp.isPlayButtonDisplayed();
 		bPause = lp.isPlayButtonDisplayed();
