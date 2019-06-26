@@ -34,7 +34,7 @@ resources: containings the executables for different browsers and the test.prope
 
 logs: A rotating Logfile.log used as an audit trail. All actions carried out under test are logged here
 
-reports: An extent report is created here for every execution. Each report is appended with date and time of execution
+reports: An extent report is created here for every execution. Each report is appended with date and time of execution. A screenshot is inserted into the report in the event of a failiure. The reports folder currently has sample results of both passing & failing tests
 
 Note: Bug discovered:-
 
@@ -44,7 +44,9 @@ Steps to replicate
 3 - Select Tennis from the All Sports dropdown list
 
 Results
+
 Videos of various catergories are displayed
 
 Expected Results
+
 Videos of the category Tennis should be displayed and videos from other categories not displayed
